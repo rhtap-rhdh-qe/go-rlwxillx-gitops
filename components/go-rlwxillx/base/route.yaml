@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-rlwxillx
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-rlwxillx 
+  name: go-rlwxillx
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-rlwxillx
+    weight: 100 
